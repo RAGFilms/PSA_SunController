@@ -1,5 +1,5 @@
 # PSA_SunController
-Sun controller for Physical Starlight Atmosphere, by Physical Addons, that allos you to set the atmosphere by time, date, season and geographic location.
+Sun controller for Physical Starlight Atmosphere, by Physical Addons, that allows you to set the atmosphere by time, date, season and geographic location.
 # PSA Sun Control Extension v1.0
 **Real-World Solar Positioning for Physical Starlight & Atmosphere**
 *by AGW Entertainment*
