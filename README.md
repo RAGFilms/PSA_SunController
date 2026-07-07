@@ -1,3 +1,78 @@
+# PSA Sun Control Extension v2.0
+**Real-World Solar Positioning for Physical Starlight & Atmosphere**
+*by AGW Entertainment*
+
+Compatible with **Blender 5.1+** and PSA 1.9.x (legacy addon or extension install)
+
+---
+
+## Overview
+
+PSA Sun Control adds timezone- and DST-aware, astronomically accurate solar
+positioning to the **Physical Starlight and Atmosphere** (PSA) addon. Enter a
+real-world location, date, and time the addon computes the correct azimuth
+and elevation with the NOAA / Astronomical Almanac algorithm and rotates the
+Starlight Sun object directly, PSA's native control path. PSA then handles sun
+color, intensity, and atmosphere itself, exactly as if you had rotated the sun
+by hand. No node editing, no external Python libraries.
+
+If no PSA installation is found, the addon falls back to driving any standard
+Sun lamp in the scene with the same convention.
+
+## Features
+
+**City Library with Automatic Daylight Saving.** Around fifty world cities
+ship with coordinates, standard UTC offsets, and regional DST rules (US, EU,
+Australia, New Zealand). Pick a city and a date — the correct offset is applied
+automatically. A manual UTC offset mode and custom lat/lon entry are available
+for anywhere else on Earth.
+
+**Event-Based Presets.** Presets store a location, date, and *solar event* —
+sunrise, sunset, golden hour, blue hour, solar noon — rather than a clock time.
+The time is solved from the math when the preset loads, so every preset is
+physically correct on any date: golden hours land near +4° elevation, sunsets
+keep the disk on the horizon, blue hours sit in the proper −4° to −8° band,
+and the Tromsø preset delivers a genuine midnight sun.
+
+**Solar Readout.** Sunrise, solar noon, sunset, and day length are computed
+and displayed for the current location and date, with polar day and polar
+night detected and labeled at high latitudes.
+
+**Day Cycle Animation Baker.** Keyframe the full sun arc across the scene
+frame range between any start and end hour, with continuous azimuth tracking
+so the sun never snaps across the 0°/360° seam mid-animation.
+
+**Other Controls.** Live update on every slider change, a Now button that
+reads the system clock, and a North Offset to align scene north (default:
++Y axis = North, azimuth measured clockwise).
+
+## Usage
+
+1. Enable the addon, open **World Properties → PSA Sun Control**.
+2. Pick a city (or enter coordinates), set the date, drag the time slider.
+3. With Live Update on, the sun follows instantly; otherwise press
+   **Calculate & Apply**.
+4. Load a Solar Event Preset for an instant physically correct look, or open
+   **Day Cycle Animation** to bake a timelapse.
+
+## Notes for v1 Users
+
+Version 2.0 replaces the v1 node-injection system entirely. Any leftover
+`NC_PSA_` driver nodes from v1 are detected and removed automatically on the
+first apply, restoring PSA's own driver connections.
+
+## Solar Model
+
+Solar position follows the NOAA Solar Calculator formulation: Julian day,
+solar declination, equation of time, hour angle, and zenith with atmospheric
+refraction correction. Sunrise and sunset use the standard −0.833° solar
+disk + refraction threshold. Accuracy is well within a tenth of a degree for
+all dates between 1900 and 2100 — far tighter than any visible difference
+in lighting.
+
+
+
+
 # PSA_SunController
 Sun controller for Physical Starlight Atmosphere, by Physical Addons, that allows you to set the atmosphere by time, date, season and geographic location.
 # PSA Sun Control Extension v1.0
