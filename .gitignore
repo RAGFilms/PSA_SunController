@@ -1,0 +1,11 @@
+# Local backups (never publish)
+_backup_*/
+
+# Python
+__pycache__/
+*.pyc
+*.bak
+
+# OS
+Thumbs.db
+.DS_Store
